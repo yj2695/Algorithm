@@ -6,13 +6,8 @@ class Solution {
     public int solution(int[] array) {
 		Map<Integer, Integer> map = new LinkedHashMap<Integer, Integer>();
 		
-		for(int i=0; i<array.length; i++) {
-			if(map.getOrDefault(array[i], -1)==-1) {
-				map.put(array[i], 1);
-			}
-			else {
-				map.put(array[i], map.get(array[i])+1);
-			}
+		for(int i : array) {
+			map.put(i, map.getOrDefault(i, 0)+1);
 		}
 		
 		int maxVal = 0;
